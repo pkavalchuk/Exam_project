@@ -1,11 +1,9 @@
 package project.by.stormnet.functional.entities.helpers;
 
 import project.by.stormnet.functional.entities.pages.FeaturedProductsPage;
-import project.by.stormnet.functional.entities.pages.ProductPage;
 
 public class FeaturedProductsHelper extends AbstractHelper {
     FeaturedProductsPage featuredProductsPage = new FeaturedProductsPage();
-    ProductPage productPage = new ProductPage();
 
     public Boolean isFeaturedProductsPageOpen() {
         return featuredProductsPage.isHeaderOnFeaturedProductsPage();
