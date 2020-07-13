@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Exam suite">
+    <listeners>
+        <listener class-name="by.stormnet.core.common.AnnotationTransformer"/>
+    </listeners>
+    <test verbose="2" name="Exam Tests">
+        <classes>
+            <class name="project.by.stormnet.functional.tests.VekByTests.AddProductFromProductPageTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.AddProductFromSearchPageTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.AddProductToCompareTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.BonusPageTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.ChangeRegionTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.ClickableLogoTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.FeaturedProductsTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.FooterTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.OpenFeedbackFormTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.ProductPageTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.RedirectToMenuTabsTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.SearchTest"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.SearchWithParamsTests"/>
+            <class name="project.by.stormnet.functional.tests.VekByTests.OpenLoginPageTest"/>
+        </classes>
+    </test>
+</suite>
