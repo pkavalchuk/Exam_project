@@ -10,7 +10,7 @@ public class HomePage extends AbstractPage {
     private static String productOnHomePage = "//img[@class=\"foreign_goods__img\"]";
     private static String bonusTab = "//img[@alt=\"Товары за бонусы\"]";
     private static String header = "//a[@href='/gazebos/']";
-    private static String headerLogged = "//*[@id=\"content\"]/div[1]/div[1]/div/h2";
+    private static String headerLine = "//dl[@id='j-nav']";
     private static String regionTab = "//li[@class=\"sitemenu__item cr-sitemenu__static cr-sitemenu__delivery\"]";
     private static String loginButton = "//span[@class=\"user_tools__link ico-login j-react-popup\"]";
     private static String feedbackLink = "//a[@href=\"https://21vek.by/services/reviews\"]";
@@ -74,7 +74,7 @@ public class HomePage extends AbstractPage {
     }
 
     public Boolean isHeaderOnHomePage(){
-        return getElement(header).isDisplayed();
+        return getElement(headerLine).isDisplayed();
     }
 
     public RegionPage clickToRegionTab() {

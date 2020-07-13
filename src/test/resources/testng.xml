@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="by.stormnet.core.common.AnnotationTransformer"/>
     </listeners>
-    <test verbose="2" name="Exam Tests">
+    <test name="Exam Tests">
         <classes>
             <class name="project.by.stormnet.functional.tests.VekByTests.AddProductFromProductPageTest"/>
             <class name="project.by.stormnet.functional.tests.VekByTests.AddProductFromSearchPageTest"/>
