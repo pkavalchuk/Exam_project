@@ -8,7 +8,13 @@ import project.by.stormnet.functional.entities.helpers.HomeHelper;
 public class AddProductFromProductPageTest {
     private HomeHelper homeHelper = new HomeHelper();
 
-    @Test
+    @Test(priority = 1)
+    public void checkDeleteProductFromBasket() throws InterruptedException {
+        Boolean isBasketEmpty = homeHelper.addToBasketFromProductPage().deleteItemFromBasket().isBasketEmpty();
+        Assert.assertTrue(isBasketEmpty, "No results were found!");
+    }
+
+    @Test(priority = 2)
     public void checkAddProductFromProductPage() throws InterruptedException {
         int countPerPage = homeHelper.addToBasketFromProductPage().getBasketResultsCount();
         Assert.assertTrue(countPerPage > 0, "No results were found!");

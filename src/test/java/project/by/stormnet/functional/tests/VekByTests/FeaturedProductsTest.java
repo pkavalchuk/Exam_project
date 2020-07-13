@@ -10,7 +10,6 @@ import project.by.stormnet.functional.entities.helpers.ProductHelper;
 public class FeaturedProductsTest {
     private HomeHelper homeHelper = new HomeHelper();
     private FeaturedProductsHelper featuredProductsHelper = new FeaturedProductsHelper();
-    private ProductHelper productHelper = new ProductHelper();
 
     @Test(priority = 1)
     public void openFeaturedProductsPage() {
@@ -30,6 +29,20 @@ public class FeaturedProductsTest {
         homeHelper.navigateToHomePage().navigateToFeaturedProductsPage().isFeaturedProductsPageOpen();
         boolean add = featuredProductsHelper.isFeaturedProductsNotEmpty();
         Assert.assertTrue(add);
+    }
+
+    @Test(priority = 4)
+    public void openProductPage() {
+        homeHelper.navigateToHomePage().navigateToFeaturedProductsPage().isFeaturedProductsPageOpen();
+        boolean redirect = featuredProductsHelper.navigateToItem().isInfoBlock();
+        Assert.assertTrue(redirect);
+    }
+
+    @Test(priority = 5)
+    public void deleteFromFeaturedProducts() {
+        homeHelper.navigateToHomePage().navigateToFeaturedProductsPage().isFeaturedProductsPageOpen();
+        boolean delete = featuredProductsHelper.deleteProduct().isFeaturedProductsEmpty();
+        Assert.assertTrue(delete);
     }
 
     @AfterTest
