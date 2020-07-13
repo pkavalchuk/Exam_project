@@ -9,7 +9,7 @@ public class LoginHelper extends AbstractHelper {
         return loginPage.isButtonOnLoginPage();
     }
 
-    public HomeHelper logIn(String email, String password){
+    public HomeHelper logIn(String email, String password) {
         loginPage
                 .fillEmailField(email)
                 .fillPasswordField(password)

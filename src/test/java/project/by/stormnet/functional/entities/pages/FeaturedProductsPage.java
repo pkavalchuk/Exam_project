@@ -2,7 +2,6 @@ package project.by.stormnet.functional.entities.pages;
 
 public class FeaturedProductsPage extends AbstractPage {
     private static String header = "//h2[@class='content__header']";
-    private static String emptyFeaturedProductsPage = "//*[@id=\"content\"]/div[1]/ul/text()";
     private static String notEmptyFeaturedProductsPage = "//ul[@class='b-result']";
     private static String delete = "//a[@class='putaside__link cr-putaside__del j-putaside j-putaside__del']";
     private static String goToItem = "//span[@class=\"result__img\"]";

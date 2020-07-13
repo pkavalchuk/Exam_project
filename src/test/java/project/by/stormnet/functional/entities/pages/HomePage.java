@@ -5,44 +5,42 @@ import org.openqa.selenium.Keys;
 public class HomePage extends AbstractPage {
     private static String logo = "//span[@class='b-logo']";
     private static String searchField = "//input[@placeholder='Поиск']";
-    private static String searchButton = "//button[@class='search__submit']";
-    private static String basketButton = "//span[@class=\"cart__count j-basket_counter\"]";
-    private static String productOnHomePage = "//img[@class=\"foreign_goods__img\"]";
-    private static String bonusTab = "//img[@alt=\"Товары за бонусы\"]";
-    private static String header = "//a[@href='/gazebos/']";
+    private static String basketButton = "//span[@class='cart__count j-basket_counter']";
+    private static String productOnHomePage = "//img[@class='foreign_goods__img']";
+    private static String bonusTab = "//img[@alt='Товары за бонусы']";
     private static String headerLine = "//dl[@id='j-nav']";
-    private static String regionTab = "//li[@class=\"sitemenu__item cr-sitemenu__static cr-sitemenu__delivery\"]";
-    private static String loginButton = "//span[@class=\"user_tools__link ico-login j-react-popup\"]";
-    private static String feedbackLink = "//a[@href=\"https://21vek.by/services/reviews\"]";
-    private static String forKitchenTab = "//span[@data-ga_action=\"Для кухни\"]";
-    private static String morozilnik = "//a[@data-ga_action=\"Крупная техника / Морозильники (2673)\"]";
-    private static String forHome = "//span[@data-ga_action=\"Для дома\"]";
-    private static String pylosos = "//a[@data-ga_action=\"Бытовая техника / Пылесосы (3)\"]";
-    private static String forRepair = "//span[@data-ga_action=\"Для ремонта\"]";
-    private static String bath = "//a[@data-ga_action=\"Сантехника / Ванны (375)\"]";
+    private static String regionTab = "//li[@class='sitemenu__item cr-sitemenu__static cr-sitemenu__delivery']";
+    private static String loginButton = "//span[@class='user_tools__link ico-login j-react-popup']";
+    private static String feedbackLink = "//a[@href='https://21vek.by/services/reviews']";
+    private static String forKitchenTab = "//span[@data-ga_action='Для кухни']";
+    private static String morozilnik = "//a[@data-ga_action='Крупная техника / Морозильники (2673)']";
+    private static String forHome = "//span[@data-ga_action='Для дома']";
+    private static String pylosos = "//a[@data-ga_action='Бытовая техника / Пылесосы (3)']";
+    private static String forRepair = "//span[@data-ga_action='Для ремонта']";
+    private static String bath = "//a[@data-ga_action='Сантехника / Ванны (375)']";
     private static String myButton = "//ul[@class='b-user_tools  cr-state-signed-in']";
     private static String logoutButton = "//*[@id='react-personal']/div[2]/div[6]/div/div";
     private static String myButtonUnloggedUser = "//li[@class='user_tools__item cr-sitemenu__profile']";
     private static String featuredProducts = "//*[@id='react-personal']/div/div[2]";
-    private static String instIcon = "//div[@class=\"styles_instagram__87akS styles_icon__19Zkj styles_icon__19Zkj\"]";
-    private static String vkIcon = "//div[@class=\"styles_vk__2Ytbl styles_icon__19Zkj styles_icon__19Zkj\"]";
-    private static String fbIcon = "//div[@class=\"styles_fb__3eTaZ styles_icon__19Zkj styles_icon__19Zkj\"]";
-    private static String youtubeIcon = "//div[@class=\"styles_youtube__2uYKz styles_icon__19Zkj styles_icon__19Zkj\"]";
-    private static String okIcon = "//div[@class=\"styles_ok__2tPTg styles_icon__19Zkj styles_icon__19Zkj\"]";
+    private static String instIcon = "//div[@class='styles_instagram__87akS styles_icon__19Zkj styles_icon__19Zkj']";
+    private static String vkIcon = "//div[@class='styles_vk__2Ytbl styles_icon__19Zkj styles_icon__19Zkj']";
+    private static String fbIcon = "//div[@class='styles_fb__3eTaZ styles_icon__19Zkj styles_icon__19Zkj']";
+    private static String youtubeIcon = "//div[@class='styles_youtube__2uYKz styles_icon__19Zkj styles_icon__19Zkj']";
+    private static String okIcon = "//div[@class='styles_ok__2tPTg styles_icon__19Zkj styles_icon__19Zkj']";
 
-    public static HomePage getHomePage(){
+    public static HomePage getHomePage() {
         HomePage homePage = new HomePage();
         waitForElementVisible(getElementBy(logo));
         System.out.println("HomePage is opened!");
         return homePage;
     }
 
-    public HomePage navigateToHomePage(){
+    public HomePage navigateToHomePage() {
         openUrl(baseUrl);
         return getHomePage();
     }
 
-    public HomePage fillSearchField(String searchKey){
+    public HomePage fillSearchField(String searchKey) {
         getElement(searchField).sendKeys(searchKey);
         return getHomePage();
     }
@@ -68,12 +66,7 @@ public class HomePage extends AbstractPage {
         return BonusPage.getBonusPage();
     }
 
-    public SearchPage clickSearchButton(){
-        getElement(basketButton).click();
-        return SearchPage.getSearchPage();
-    }
-
-    public Boolean isHeaderOnHomePage(){
+    public Boolean isHeaderOnHomePage() {
         return getElement(headerLine).isDisplayed();
     }
 
@@ -114,51 +107,51 @@ public class HomePage extends AbstractPage {
         return SearchPage.getSearchPage();
     }
 
-    public HomePage openDropdownList(){
+    public HomePage openDropdownList() {
         waitForElementVisible(getElementBy(myButton));
         getElement(myButton).click();
         return this;
     }
 
-    public HomePage clickOnLogoutButton(){
+    public HomePage clickOnLogoutButton() {
         waitForElementVisible(getElementBy(logoutButton));
         getElement(logoutButton).click();
         return this;
     }
 
-    public HomePage openDropdownListUnloggedUser(){
+    public HomePage openDropdownListUnloggedUser() {
         waitForElementVisible(getElementBy(myButtonUnloggedUser));
         getElement(myButtonUnloggedUser).click();
         return this;
     }
 
-    public HomePage clickOnFeaturedProducts(){
+    public HomePage clickOnFeaturedProducts() {
         waitForElementVisible(getElementBy(featuredProducts));
         getElement(featuredProducts).click();
         return this;
     }
 
-    public Boolean isVkIconOnHomePage(){
+    public Boolean isVkIconOnHomePage() {
         waitForElementVisible(getElementBy(vkIcon));
         return getElement(vkIcon).isDisplayed();
     }
 
-    public Boolean isFbIconOnHomePage(){
+    public Boolean isFbIconOnHomePage() {
         waitForElementVisible(getElementBy(fbIcon));
         return getElement(fbIcon).isDisplayed();
     }
 
-    public Boolean isInstaIconOnHomePage(){
+    public Boolean isInstaIconOnHomePage() {
         waitForElementVisible(getElementBy(instIcon));
         return getElement(instIcon).isDisplayed();
     }
 
-    public Boolean isYoutubeIconOnHomePage(){
+    public Boolean isYoutubeIconOnHomePage() {
         waitForElementVisible(getElementBy(youtubeIcon));
         return getElement(youtubeIcon).isDisplayed();
     }
 
-    public Boolean isOkIconOnHomePage(){
+    public Boolean isOkIconOnHomePage() {
         waitForElementVisible(getElementBy(okIcon));
         return getElement(okIcon).isDisplayed();
     }

@@ -19,7 +19,6 @@ public class BasketPage extends AbstractPage {
         return getElements(results).size();
     }
 
-
     public HomePage clickLogo() {
         waitForElementVisible(getElementBy(logo));
         getElement(logo).click();

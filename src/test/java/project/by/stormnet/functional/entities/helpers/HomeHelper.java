@@ -1,20 +1,17 @@
 package project.by.stormnet.functional.entities.helpers;
 
-import project.by.stormnet.functional.entities.pages.BasketPage;
-import project.by.stormnet.functional.entities.pages.BonusPage;
-import project.by.stormnet.functional.entities.pages.FeedbackPage;
 import project.by.stormnet.functional.entities.pages.HomePage;
 
 public class HomeHelper extends AbstractHelper {
     private HomePage homePage = new HomePage();
 
-    public HomeHelper navigateToHomePage(){
+    public HomeHelper navigateToHomePage() {
         System.out.println("Navigate to 'Home' page");
         homePage.navigateToHomePage();
         return this;
     }
 
-    public SearchHelper search(String searchKey){
+    public SearchHelper search(String searchKey) {
         navigateToHomePage();
         homePage
                 .fillSearchField(searchKey)
@@ -23,7 +20,7 @@ public class HomeHelper extends AbstractHelper {
         return new SearchHelper();
     }
 
-    public BasketHelper addToBasketFromSearchPage(String searchKey){
+    public BasketHelper addToBasketFromSearchPage(String searchKey) {
         navigateToHomePage();
         homePage
                 .fillSearchField(searchKey)
@@ -43,35 +40,35 @@ public class HomeHelper extends AbstractHelper {
         return new BasketHelper();
     }
 
-    public BonusHelper openBonusPage(){
+    public BonusHelper openBonusPage() {
         navigateToHomePage();
         homePage
                 .clickToBonus();
         return new BonusHelper();
     }
 
-    public RegionHelper openRegionPage(){
+    public RegionHelper openRegionPage() {
         navigateToHomePage();
         homePage
                 .clickToRegionTab();
         return new RegionHelper();
     }
 
-    public FeedbackHelper openFeedbackPage(){
+    public FeedbackHelper openFeedbackPage() {
         navigateToHomePage();
         homePage
                 .clickToFeedbackLink();
         return new FeedbackHelper();
     }
 
-    public BasketHelper navigateToBasketPage(){
+    public BasketHelper navigateToBasketPage() {
         navigateToHomePage();
         System.out.println("Navigate to 'Basket' page");
         homePage.goToBasket();
         return new BasketHelper();
     }
 
-    public Boolean isHomePageOpen(){
+    public Boolean isHomePageOpen() {
         return homePage.isHeaderOnHomePage();
     }
 
@@ -81,21 +78,21 @@ public class HomeHelper extends AbstractHelper {
         return new LoginHelper();
     }
 
-    public SearchHelper openMorozilnikSearch(){
+    public SearchHelper openMorozilnikSearch() {
         navigateToHomePage();
         homePage
                 .clickToMorozilnik();
         return new SearchHelper();
     }
 
-    public SearchHelper openPylisosSearch(){
+    public SearchHelper openPylisosSearch() {
         navigateToHomePage();
         homePage
                 .clickToPylisos();
         return new SearchHelper();
     }
 
-    public SearchHelper openBathSearch(){
+    public SearchHelper openBathSearch() {
         navigateToHomePage();
         homePage
                 .clickToBath();
@@ -108,6 +105,7 @@ public class HomeHelper extends AbstractHelper {
                 .clickOnLogoutButton();
         return this;
     }
+
     public ProductHelper navigateToProductPage() {
         navigateToHomePage();
         homePage.goToProduct();
@@ -123,23 +121,23 @@ public class HomeHelper extends AbstractHelper {
         return new FeaturedProductsHelper();
     }
 
-    public Boolean isVkIconInFooter(){
+    public Boolean isVkIconInFooter() {
         return homePage.isVkIconOnHomePage();
     }
 
-    public Boolean isFbIconInFooter(){
+    public Boolean isFbIconInFooter() {
         return homePage.isFbIconOnHomePage();
     }
 
-    public Boolean isInstaIconInFooter(){
+    public Boolean isInstaIconInFooter() {
         return homePage.isInstaIconOnHomePage();
     }
 
-    public Boolean isYoutubeIconInFooter(){
+    public Boolean isYoutubeIconInFooter() {
         return homePage.isYoutubeIconOnHomePage();
     }
 
-    public Boolean isOKIconInFooter(){
+    public Boolean isOKIconInFooter() {
         return homePage.isOkIconOnHomePage();
     }
 }
